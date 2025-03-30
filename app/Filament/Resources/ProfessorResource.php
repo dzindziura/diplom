@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProfessorResource\Pages;
 use App\Models\Professor;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -38,6 +39,14 @@ class ProfessorResource extends Resource
                 ->dehydrated()
                 ->maxLength(255),
 
+            Forms\Components\Checkbox::make('is_director')
+                ->label('Входить в керівництво кафедри')
+                ->default(false),
+
+            Forms\Components\TextInput::make('position')->default('99')->label('Позиція в списку'),
+
+
+
             Forms\Components\TextInput::make('title')
                 ->label('Посада')
                 ->maxLength(255),
@@ -54,10 +63,14 @@ class ProfessorResource extends Resource
                 ->email()
                 ->maxLength(255),
 
-            Forms\Components\TextInput::make('image')
-                ->label('URL зображення')
-                ->maxLength(255)
-                ->helperText('Посилання на зображення викладача (опціонально)'),
+            FileUpload::make('image')
+                ->label('Фото викладача')
+                ->directory('professors') // зберігається в storage/app/public/professors
+                ->image()
+                ->imageEditor() // опціонально: вбудований редактор
+                ->imagePreviewHeight('150')
+                ->maxSize(2048) // максимум 2MB
+                ->helperText('Завантажте фотографію у форматі JPG, PNG або WEBP'),
 
             Forms\Components\Textarea::make('biography')
                 ->label('Біографія')

@@ -20,7 +20,7 @@ export default function ProfessorCard({ name, title, degree, email, image, slug 
         >
             <div className="w-full aspect-[4/3] bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
                 <img
-                    src={image || "/images/professors/default.png"}
+                    src={image || "/storage/professors/default.png"}
                     alt={name}
                     className="h-full w-full object-cover"
                 />

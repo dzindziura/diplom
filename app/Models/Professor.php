@@ -18,6 +18,8 @@ class Professor extends Model
         'research_interests',
         'courses',
         'publications',
+        'is_director',
+        'position',
     ];
 
     public function degree()
