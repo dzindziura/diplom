@@ -64,7 +64,7 @@ export default function MainLayout() {
                         onClick={() => scrollToSection(section.id)}
                         className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none ${
                             activeSection === section.id
-                                ? "bg-blue-700 dark:bg-yellow-400 scale-125 shadow-md"
+                                ? "bg-yellow-300 dark:bg-yellow-400 scale-125 shadow-md"
                                 : "bg-blue-300 dark:bg-gray-500 opacity-50 hover:opacity-100"
                         }`}
                         title={section.label}

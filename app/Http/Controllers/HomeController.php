@@ -34,6 +34,7 @@ class HomeController extends Controller
                     'name' => $professor->name,
                     'title' => $professor->title,
                     'degree' => optional($professor->degree)->name,
+                    'slug' => $professor->slug,
                     'email' => $professor->email,
                     'image' => $professor->image ? Storage::url($professor->image) : null,
                 ];
@@ -55,6 +56,7 @@ class HomeController extends Controller
                     'title' => $professor->title,
                     'degree' => optional($professor->degree)->name,
                     'email' => $professor->email,
+                    'slug' => $professor->slug,
                     'image' => $professor->image ? Storage::url($professor->image) : null,
                 ];
             });
