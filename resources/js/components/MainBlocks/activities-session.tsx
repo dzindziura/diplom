@@ -1,4 +1,5 @@
 import { FaChalkboardTeacher, FaFlask, FaUserGraduate, FaGlobeEurope } from "react-icons/fa";
+import Politech from "@/images/image2.jpg";
 
 export default function ActivitiesSection() {
     const activities = [
@@ -26,11 +27,19 @@ export default function ActivitiesSection() {
 
     return (
         <div
+            className="relative w-full h-screen bg-fixed bg-cover flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+            style={{
+                backgroundImage: `url(${Politech})`,
+                backgroundPosition: "center top",
+            }}
+        >
+            <div className="absolute inset-0 bg-black/50 z-0" />
+        <div
             id="activities"
             className="w-full h-full dark:bg-gray-950 flex items-center justify-center px-6"
         >
-            <div className="max-w-6xl text-center">
-                <h2 className="text-4xl font-bold text-blue-800 dark:text-white mb-10">
+            <div className="relative z-10">
+                <h2 className=" md:text-4xl font-extrabold text-white drop-shadow-md mb-6 animate-fade-in-up">
                     Основні напрямки діяльності
                 </h2>
 
@@ -51,6 +60,7 @@ export default function ActivitiesSection() {
                     ))}
                 </div>
             </div>
+        </div>
         </div>
     );
 }

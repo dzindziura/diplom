@@ -5,7 +5,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="backdrop-blur-md bg-white/30 dark:bg-gray-800/30 text-gray-900 dark:text-white shadow-md sticky top-0 z-50">
+        <header className="backdrop-blur-md dark:bg-gray-800/30 text-gray-900 dark:text-white shadow-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 <Link href="/" className="flex items-center space-x-2">
                     <img src="/logo.png" alt="Логотип" className="w-10 h-10 object-contain rounded-md shadow-sm" />
